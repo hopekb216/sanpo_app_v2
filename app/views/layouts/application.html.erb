@@ -45,7 +45,6 @@
           <% unless request.fullpath.include?("sign_up") || request.fullpath.include?("sign_in") %>
             <%= link_to t("links.signup"), new_user_registration_path,
                   class: "btn btn-primary header-link" %>
-
           <% end %>
 
         <% end %>
@@ -53,24 +52,7 @@
     </header>
 
     <main class="main-content">
-
-      <% unless controller_name == "registrations" && action_name == "edit" %>
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>">
-            <% if value.is_a?(Array) %>
-              <p class="error-title"><%= t("flash.error_title") %></p>
-              <ul>
-                <% value.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-              </ul>
-            <% else %>
-              <%= value %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-
+      <!-- ★ flash 表示は削除（ログイン画面でのみ表示するため） -->
       <%= yield %>
     </main>
 

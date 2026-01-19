@@ -8,7 +8,14 @@
   <h2 class="text-center mb-2"><%= t("devise.sessions.new.sign_in") %></h2>
   <p class="text-center text-muted mb-4"><%= t("devise.sessions.new.app_description") %></p>
 
-  <!-- ★ エラーメッセージ（追加） -->
+  <!-- ★ flash[:alert]（Deviseのログイン失敗メッセージ） -->
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <!-- ★ resource.errors（フォーム入力エラー） -->
   <% if resource.errors.any? %>
     <div class="alert alert-danger">
       <%= resource.errors.full_messages.first %>
