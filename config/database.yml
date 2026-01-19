@@ -20,6 +20,10 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# 本番環境は PostgreSQL（Render 用）
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV["DATABASE_URL"] %>
+  
