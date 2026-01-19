@@ -1,0 +1,26 @@
+<h1><%= t("courses.index.title") %></h1>
+
+<div class="course-list">
+  <% @courses.each do |course| %>
+    <div class="course-card">
+
+      <% if course.image.attached? %>
+        <%= image_tag course.image, class: "course-thumb" %>
+      <% else %>
+        <%= image_tag "default_course.png", class: "course-thumb" %>
+      <% end %>
+
+      <h2><%= link_to course.title, course_path(course) %></h2>
+
+      <p>
+        投稿者：
+        <%= link_to course.user.username, user_path(course.user) %>
+      </p>
+
+      <p>距離：<%= course.distance %> km</p>
+      <p>時間：<%= course.duration %> 分</p>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @courses %>

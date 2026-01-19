@@ -1,0 +1,83 @@
+ja:
+  devise:
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+
+  links:
+    login: "ログイン"
+    logout: "ログアウト"
+    signup: "新規登録"
+    mypage: "マイページ"
+
+  activerecord:
+    models:
+      user: "ユーザー"
+      course: "コース"
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        username: "ユーザー名"
+        current_password: "パスワード"
+      course:
+        title: "タイトル"
+        distance: "距離"
+        duration: "所要時間"
+        description: "説明"
+        image: "画像"
+
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: "を入力してください"
+      taken: "はすでに使用されています"
+      too_short: "は%{count}文字以上で入力してください"
+      too_long: "は%{count}文字以内で入力してください"
+      confirmation: "が一致しません"
+      invalid: "が正しくありません"
+
+  helpers:
+    submit:
+      create: "%{model}を作成"
+      update: "%{model}を更新"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "30秒前後"
+      less_than_x_seconds:
+        one: "1秒未満"
+        other: "%{count}秒未満"
+      x_seconds:
+        one: "1秒"
+        other: "%{count}秒"
+      x_minutes:
+        one: "1分"
+        other: "%{count}分"
+      x_hours:
+        one: "1時間"
+        other: "%{count}時間"
+      x_days:
+        one: "1日"
+        other: "%{count}日"
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+
+  date:
+    formats:
+      default: "%Y/%m/%d"
+
+  views:
+    pagination:
+      previous: "前へ"
+      next: ""
+      last: ""
+      first: "最初"
+
+  courses:
+    form:
+      submit_new: "投稿する"
+      submit_edit: "保存する"

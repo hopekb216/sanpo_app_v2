@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>SanpoApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="header-left">
+        <%= link_to "SanpoApp", root_path, class: "header-logo" %>
+      </div>
+
+      <div class="header-right">
+        <% if user_signed_in? %>
+
+          <% unless (controller_name == "users" && action_name == "mypage") ||
+                    (controller_name == "registrations" && action_name == "edit") %>
+
+            <%= button_to t("links.mypage"), mypage_path,
+                  method: :get,
+                  form: { data: { turbo: false } },
+                  class: "header-link" %>
+
+          <% end %>
+
+          <%= button_to t("links.logout"), destroy_user_session_path,
+                method: :delete,
+                form: { data: { turbo: false } },
+                class: "header-link" %>
+
+        <% else %>
+
+          <% unless request.fullpath.include?("sign_in") || request.fullpath.include?("sign_up") %>
+            <%= link_to t("links.login"), new_user_session_path,
+                  class: "header-link", data: { turbo: false } %>
+          <% end %>
+
+          <% unless request.fullpath.include?("sign_up") || request.fullpath.include?("sign_in") %>
+            <%= link_to t("links.signup"), new_user_registration_path,
+                  class: "header-link", data: { turbo: false } %>
+          <% end %>
+
+        <% end %>
+      </div>
+    </header>
+
+    <main class="main-content">
+
+      <% unless controller_name == "registrations" && action_name == "edit" %>
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>">
+            <% if value.is_a?(Array) %>
+              <p class="error-title">入力内容にエラーがあります</p>
+              <ul>
+                <% value.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <%= value %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <% unless controller_name == "registrations" && action_name == "new" %>
+      <%= render "shared/footer" %>
+    <% end %>
+
+  </body>
+</html>

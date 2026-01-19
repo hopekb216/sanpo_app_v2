@@ -1,0 +1,14 @@
+<h1><%= t("posts.index.title") %></h1>
+
+<%= link_to t("posts.index.new_post"), new_post_path %>
+
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <%= render "post", post: post %>
+  <% end %>
+
+  <%= paginate @posts %>
+
+<% else %>
+  <p><%= t("posts.index.no_posts") %></p>
+<% end %>

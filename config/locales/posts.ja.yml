@@ -1,0 +1,29 @@
+ja:
+  posts:
+    index:
+      title: "投稿一覧"
+      new_post: "新規投稿"
+      no_posts: "まだ投稿がありません"
+    show:
+      title: "投稿詳細"
+      edit: "編集"
+      delete: "削除"
+      back: "一覧へ戻る"
+      confirm_delete: "本当に削除しますか？"
+
+    new:
+      title: "新規投稿"
+    edit:
+      title: "投稿の編集"
+
+    form:
+      title: "タイトル"
+      body: "本文"
+      submit: "投稿する"
+      update: "更新する"
+
+    flash:
+      created: "投稿を作成しました"
+      updated: "投稿を更新しました"
+      destroyed: "投稿を削除しました"
+      

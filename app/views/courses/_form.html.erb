@@ -1,0 +1,49 @@
+<div class="form-card">
+  <%= form_with model: @course, local: true do |f| %>
+
+    <!-- タイトル -->
+    <div class="form-group">
+      <%= f.label :title, t("courses.form.title") %>
+      <%= f.text_field :title, class: "form-input", placeholder: "例：春の公園散歩コース" %>
+    </div>
+
+    <!-- 距離 -->
+    <div class="form-group">
+      <%= f.label :distance, t("courses.form.distance") %>
+      <%= f.number_field :distance, class: "form-input", step: 0.1, placeholder: "例：3.5" %>
+    </div>
+
+    <!-- 時間 -->
+    <div class="form-group">
+      <%= f.label :duration, t("courses.form.duration") %>
+      <%= f.number_field :duration, class: "form-input", placeholder: "例：45" %>
+    </div>
+
+    <!-- 説明 -->
+    <div class="form-group">
+      <%= f.label :description, t("courses.form.description") %>
+      <%= f.text_area :description, class: "form-input", rows: 5, placeholder: "コースの説明を書いてください" %>
+    </div>
+
+    <!-- 編集時のみ現在の画像を表示 -->
+    <% if @course.image.attached? %>
+      <div class="current-image">
+        <p>現在の画像：</p>
+        <%= image_tag @course.image, class: "course-thumb" %>
+      </div>
+    <% end %>
+
+    <!-- 新しい画像をアップロード -->
+    <div class="form-group">
+      <%= f.label :image, t("courses.form.image") %>
+      <%= f.file_field :image, class: "form-input" %>
+    </div>
+
+    <!-- 送信ボタン（i18n で new/edit を切り替え） -->
+    <div class="form-actions">
+      <%= f.submit(@course.new_record? ? t("courses.form.submit_new") : t("courses.form.submit_edit"),
+                   class: "btn btn-primary") %>
+    </div>
+
+  <% end %>
+</div>

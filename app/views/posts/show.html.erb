@@ -1,0 +1,20 @@
+<h1><%= t("posts.show.title") %></h1>
+
+<h2><%= @post.title %></h2>
+
+<p><%= @post.body %></p>
+
+<p>投稿日: <%= l(@post.created_at, format: :short) %></p>
+
+<p>
+  投稿者:
+  <%= link_to @post.user.username, user_path(@post.user) %>
+</p>
+
+<% if @post.user == current_user %>
+  <%= link_to t("posts.show.edit"), edit_post_path(@post) %> |
+  <%= link_to t("posts.show.delete"), post_path(@post),
+      data: { turbo_method: :delete, turbo_confirm: t("posts.show.confirm_delete") } %>
+<% end %>
+
+<%= link_to t("posts.show.back"), posts_path %>

@@ -1,0 +1,388 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+/* ===========================
+   一覧カード（トップ / マイページ）
+   =========================== */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.course-card {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* カード内の画像（一覧） */
+.course-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* 編集・削除ボタン（一覧） */
+.course-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* ===========================
+   投稿詳細ページ
+   =========================== */
+.course-detail-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 詳細ページの画像 */
+.course-detail-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.course-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 詳細ページのテキスト */
+.course-detail-info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* タグ */
+.course-tag {
+    background-color: #e0f0ff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* 編集・削除・戻るボタン（詳細） */
+.course-detail-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ===========================
+   フォーム（新規 / 編集）
+   =========================== */
+.form-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 6px;
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* Bootstrap の form-control を上書き */
+.form-input {
+    width: 100%;
+    padding: 8px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    background-color: #fff !important;
+}
+
+.form-actions {
+    margin-top: 20px;
+}
+
+/* ===========================
+   ボタン共通
+   =========================== */
+.btn {
+    display: inline-block;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-primary {
+    background-color: #007bff !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+}
+
+.btn-secondary {
+    background-color: #6c757d !important;
+}
+
+/* ===========================
+   ヘッダー
+   =========================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.header-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333 !important;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-link {
+    text-decoration: none !important;
+    color: #007bff !important;
+}
+
+.header-user {
+    color: #555;
+}
+
+/* ===========================
+   フラッシュメッセージ
+   =========================== */
+.flash-container {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.flash.notice {
+    background: #e6f7ff;
+    color: #007bff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.flash.alert {
+    background: #ffe6e6;
+    color: #d9534f;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   メインコンテンツ
+   =========================== */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+footer a {
+    margin: 0 10px;
+}
+
+.signup-wrapper {
+    max-width: 380px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.signup-logo {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.signup-subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.signup-wrapper form {
+    text-align: left;
+}
+
+.signup-wrapper input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+.signup-wrapper input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.signup-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* プロフィール全体の余白（ヘッダーとフッターに挟まれる前提） */
+.profile-page {
+    padding: 20px 16px;
+}
+
+/* ユーザー名（中央） */
+.profile-name {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* アイコン（中央） */
+.profile-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    /* 投稿一覧との距離を確保 */
+}
+
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-posts-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* カード群の余白 */
+.course-list {
+    margin-bottom: 40px;
+    /* フッターとの距離を確保 */
+}
+
+.error-messages {
+    background: #ffe8e8;
+    border: 1px solid #ffb3b3;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.error-messages h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #b30000;
+}
+
+.error-messages ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.error-messages li {
+    color: #b30000;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.flash {
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.flash.notice {
+    background-color: #e6f4ff;
+    color: #004a8f;
+    border: 1px solid #b5d9ff;
+}
+
+.flash.error {
+    background-color: #ffe6e6;
+    color: #a30000;
+    border: 1px solid #ffb3b3;
+}
+
+/* ★ エラータイトル（プロフィール編集と同じ雰囲気） */
+.error-title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+/* ★ 箇条書きのエラー（読みやすい行間） */
+.flash.error ul {
+    margin: 4px 0 0 0;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+.flash.error li {
+    list-style: disc;
+    font-size: 14px;
+}

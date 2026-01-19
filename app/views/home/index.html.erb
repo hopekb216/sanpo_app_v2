@@ -1,0 +1,33 @@
+<p class="welcome-message">あなたの散歩コースを共有してみませんか。</p>
+
+<% if user_signed_in? %>
+  <div class="actions mb-3">
+    <%= link_to "新規投稿", new_course_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<hr>
+
+<div class="course-list">
+  <% @courses.each do |course| %>
+    <div class="course-card">
+
+      <% if course.image.attached? %>
+        <%= image_tag course.image, class: "course-thumb" %>
+      <% else %>
+        <%= image_tag "default_course.png", class: "course-thumb" %>
+      <% end %>
+
+      <h2><%= link_to course.title, course_path(course) %></h2>
+      <p>投稿日時：<%= course.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      <p>
+        投稿者：
+        <%= link_to course.user.username, user_path(course.user) %>
+      </p>
+
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @courses %>
+

@@ -1,0 +1,36 @@
+<div class="profile-page">
+
+  <!-- ユーザー名 -->
+  <h2 class="profile-name"><%= @user.username %> さん</h2>
+
+  <!-- アイコン -->
+  <div class="profile-icon-wrapper">
+    <%= image_tag "default_icon.png", class: "profile-icon" %>
+  </div>
+
+  <!-- 投稿一覧タイトル -->
+  <h3 class="profile-posts-title">投稿一覧</h3>
+
+  <!-- 投稿カード一覧 -->
+  <div class="course-list">
+    <% @courses.each do |course| %>
+      <div class="course-card">
+
+        <% if course.image.attached? %>
+          <%= image_tag course.image, class: "course-thumb" %>
+        <% else %>
+          <%= image_tag "default_course.png", class: "course-thumb" %>
+        <% end %>
+
+        <h2><%= link_to course.title, course_path(course) %></h2>
+
+        <p>投稿日時：<%= course.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+
+      </div>
+    <% end %>
+  </div>
+
+  <!-- ページネーション -->
+  <%= paginate @courses %>
+
+</div>

@@ -1,0 +1,20 @@
+ja:
+  courses:
+    index:
+      title: "散歩コース一覧"
+      new_course: "新しいコースを作成"
+    show:
+      edit: "編集"
+      delete: "削除"
+    new:
+      title: "新しい散歩コース"
+    edit:
+      title: "コースを編集"
+    form:
+      title: "タイトル"
+      distance: "距離（km）"
+      duration: "所要時間（分）"
+      description: "説明"
+      image: "コース画像"
+      submit: "投稿"
+      update: "更新"
