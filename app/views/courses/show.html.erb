@@ -5,12 +5,12 @@
 
   <!-- 投稿者 -->
   <p class="text-muted mb-1">
-    投稿者：<%= @course.user.username %>
+    <%= t("courses.show.author") %>：<%= @course.user.username %>
   </p>
 
   <!-- 投稿日時 -->
   <p class="text-muted small mb-3">
-    投稿日時：<%= @course.created_at.strftime("%Y-%m-%d %H:%M") %>
+    <%= t("courses.show.posted_at") %>：<%= @course.created_at.strftime("%Y-%m-%d %H:%M") %>
   </p>
 
   <!-- メイン画像 -->
@@ -24,13 +24,13 @@
 
   <!-- 投稿情報 -->
   <div class="mb-3">
-    <p><strong>距離：</strong><%= @course.distance %> km</p>
-    <p><strong>時間：</strong><%= @course.duration %> 分</p>
-    <p><strong>説明：</strong><%= simple_format(@course.description) %></p>
+    <p><strong><%= t("courses.show.distance") %>：</strong><%= @course.distance %> km</p>
+    <p><strong><%= t("courses.show.duration") %>：</strong><%= @course.duration %> <%= t("courses.show.minutes") %></p>
+    <p><strong><%= t("courses.show.description") %>：</strong><%= simple_format(@course.description) %></p>
   </div>
 
-  <!-- コメント一覧（表示のみ） -->
-  <h5 class="mt-4 mb-2">コメント</h5>
+  <!-- コメント一覧 -->
+  <h5 class="mt-4 mb-2"><%= t("courses.show.comments_title") %></h5>
 
   <% if @course.comments.any? %>
     <% @course.comments.each do |comment| %>
@@ -40,7 +40,7 @@
       </div>
     <% end %>
   <% else %>
-    <p class="text-muted">コメントはまだありません。</p>
+    <p class="text-muted"><%= t("courses.show.no_comments") %></p>
   <% end %>
 
   <!-- ボタン -->
@@ -50,18 +50,12 @@
       <div class="d-flex gap-2 mb-3">
         <%= link_to t("courses.show.edit"), edit_course_path(@course), class: "btn btn-primary w-50" %>
         <%= link_to t("courses.show.delete"), @course,
-              data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+              data: { turbo_method: :delete, turbo_confirm: t("courses.show.confirm_delete") },
               class: "btn btn-danger w-50" %>
       </div>
     <% end %>
 
-    <% if @course.user == current_user %>
-      <!-- 自分の投稿 → マイページへ -->
-      <%= link_to "一覧に戻る", mypage_path, class: "btn btn-secondary w-100" %>
-    <% else %>
-      <!-- 他人の投稿 → その人のプロフィールへ -->
-      <%= link_to "一覧に戻る", user_path(@course.user), class: "btn btn-secondary w-100" %>
-    <% end %>
+    <%= link_to t("courses.show.back_to_list"), root_path, class: "btn btn-secondary w-100" %>
 
   </div>
 

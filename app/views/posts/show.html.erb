@@ -4,10 +4,13 @@
 
 <p><%= @post.body %></p>
 
-<p>投稿日: <%= l(@post.created_at, format: :short) %></p>
+<p>
+  <%= t("posts.show.posted_at") %>:
+  <%= l(@post.created_at, format: :short) %>
+</p>
 
 <p>
-  投稿者:
+  <%= t("posts.show.author") %>:
   <%= link_to @post.user.username, user_path(@post.user) %>
 </p>
 
@@ -17,4 +20,10 @@
       data: { turbo_method: :delete, turbo_confirm: t("posts.show.confirm_delete") } %>
 <% end %>
 
-<%= link_to t("posts.show.back"), posts_path %>
+<hr>
+
+<% if user_signed_in? %>
+  <%= link_to t("posts.show.back"), user_posts_path(@post.user), class: "btn btn-secondary" %>
+<% else %>
+  <%= link_to t("posts.show.back"), root_path, class: "btn btn-secondary" %>
+<% end %>

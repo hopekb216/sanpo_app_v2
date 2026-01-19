@@ -386,3 +386,7 @@ footer a {
     list-style: disc;
     font-size: 14px;
 }
+
+.header-right .btn {
+    color: #fff !important;
+}

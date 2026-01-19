@@ -1,7 +1,9 @@
 <div class="profile-page">
 
   <!-- ユーザー名 -->
-  <h2 class="profile-name"><%= @user.username %> さん</h2>
+  <h2 class="profile-name">
+    <%= t("users.profile.title", username: @user.username) %>
+  </h2>
 
   <!-- アイコン -->
   <div class="profile-icon-wrapper">
@@ -9,7 +11,7 @@
   </div>
 
   <!-- 投稿一覧タイトル -->
-  <h3 class="profile-posts-title">投稿一覧</h3>
+  <h3 class="profile-posts-title"><%= t("users.profile.posts_title") %></h3>
 
   <!-- 投稿カード一覧 -->
   <div class="course-list">
@@ -24,7 +26,10 @@
 
         <h2><%= link_to course.title, course_path(course) %></h2>
 
-        <p>投稿日時：<%= course.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <p>
+          <%= t("users.profile.posted_at") %>：
+          <%= l(course.created_at, format: :default) %>
+        </p>
 
       </div>
     <% end %>

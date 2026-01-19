@@ -1,5 +1,6 @@
 ja:
   devise:
+
     sessions:
       signed_in: "ログインしました"
       signed_out: "ログアウトしました"
@@ -9,11 +10,15 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         remember_me: "ログイン状態を保持する"
+        app_description: "おさんぽアプリ"
+        forgot_password: "パスワードを忘れた方はこちら"
+        no_account: "アカウントをお持ちでない方はこちら"
 
     registrations:
       signed_up: "アカウント登録が完了しました"
       updated: "アカウント情報を更新しました"
       destroyed: "アカウントを削除しました"
+
       new:
         sign_up: "新規登録"
         username: "ユーザー名"
@@ -21,6 +26,20 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード（確認）"
         password_minimum: "(%{count}文字以上で入力してください)"
+        username_rule: "ユーザー名は 30 文字以内で入力してください"
+        password_rule: "パスワードは 6 文字以上で入力してください"
+        already_have_account: "既にアカウントをお持ちの方はこちら"
+        app_description: "おさんぽアプリ"
+        terms: "利用規約"
+        privacy: "プライバシーポリシー"
+
+      edit:
+        title: "プロフィール編集"
+        error_title: "入力内容にエラーがあります"
+        username: "ユーザー名"
+        current_password: "現在のパスワード"
+        update: "更新する"
+        back_to_mypage: "マイページに戻る"
 
     passwords:
       send_instructions: "パスワード再設定用のメールを送信しました"

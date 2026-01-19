@@ -1,5 +1,5 @@
 <div class="post">
   <h3><%= post.title %></h3>
   <p><%= post.body %></p>
-  <p>投稿者: <%= post.user.username %></p>
+  <p><%= t("posts.show.author") %>: <%= post.user.username %></p>
 </div>

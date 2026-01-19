@@ -1,20 +1,52 @@
 ja:
   courses:
+
     index:
       title: "散歩コース一覧"
+      welcome: "あなたの散歩コースを共有してみませんか。"
       new_course: "新しいコースを作成"
+      posted_at: "投稿日時"
+      author: "投稿者"
+      distance: "距離"
+      duration: "時間"
+      minutes: "分"
+
     show:
+      author: "投稿者"
+      posted_at: "投稿日時"
+      distance: "距離"
+      duration: "時間"
+      minutes: "分"
+      description: "説明"
+
+      comments_title: "コメント"
+      no_comments: "コメントはまだありません。"
+
       edit: "編集"
       delete: "削除"
+      confirm_delete: "削除しますか？"
+      back_to_list: "一覧に戻る"
+
     new:
       title: "新しい散歩コース"
+
     edit:
       title: "コースを編集"
+
     form:
       title: "タイトル"
       distance: "距離（km）"
       duration: "所要時間（分）"
       description: "説明"
       image: "コース画像"
-      submit: "投稿"
-      update: "更新"
+
+      submit_new: "投稿する"
+      submit_edit: "保存する"
+
+      current_image: "現在の画像："
+
+      placeholder:
+        title: "例：春の公園散歩コース"
+        distance: "例：3.5"
+        duration: "例：45"
+        description: "コースの説明を書いてください"

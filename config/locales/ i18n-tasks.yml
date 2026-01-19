@@ -1,0 +1,11 @@
+base_locale: ja
+
+search:
+  paths:
+    - app/
+  exclude:
+    - app/assets
+    - app/javascript
+  scanners:
+    - ruby_ast
+    - erb

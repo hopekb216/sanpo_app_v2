@@ -73,11 +73,29 @@ ja:
   views:
     pagination:
       previous: "前へ"
-      next: ""
-      last: ""
+      next: "次へ"
+      last: "最後"
       first: "最初"
 
-  courses:
-    form:
-      submit_new: "投稿する"
-      submit_edit: "保存する"
+  app:
+    title: "SanpoApp"
+
+  flash:
+    error_title: "入力内容にエラーがあります"
+
+  pages:
+    home:
+      title: "Sanpo App"
+      welcome: "ようこそ！投稿機能を使って、散歩の記録を残しましょう。"
+
+    contact:
+      title: "お問い合わせ"
+      preparing: "お問い合わせページは準備中です。"
+
+    terms:
+      title: "利用規約"
+      preparing: "利用規約ページは準備中です。"
+
+    privacy:
+      title: "プライバシーポリシー"
+      preparing: "プライバシーポリシーページは準備中です。"

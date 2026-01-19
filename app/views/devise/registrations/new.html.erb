@@ -6,7 +6,7 @@
 
   <!-- タイトル -->
   <h2 class="text-center mb-2"><%= t("devise.registrations.new.sign_up") %></h2>
-  <p class="text-center text-muted mb-4">おさんぽアプリ</p>
+  <p class="text-center text-muted mb-4"><%= t("devise.registrations.new.app_description") %></p>
 
   <!-- フォーム -->
   <%= form_for(resource,
@@ -35,17 +35,23 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
     </div>
 
+    <!-- 説明文 -->
+    <div class="text-muted small mb-3">
+      ・<%= t("devise.registrations.new.username_rule") %><br>
+      ・<%= t("devise.registrations.new.password_rule") %>
+    </div>
+
     <%= f.submit t("devise.registrations.new.sign_up"), class: "btn btn-primary w-100 mt-3" %>
   <% end %>
 
   <!-- リンク群 -->
   <div class="text-center mt-3">
-    <%= link_to "既にアカウントをお持ちの方はこちら", new_session_path(resource_name), class: "text-decoration-none text-muted d-block" %>
+    <%= link_to t("devise.registrations.new.already_have_account"), new_session_path(resource_name), class: "text-decoration-none text-muted d-block" %>
   </div>
 
   <!-- フッター -->
   <footer class="text-center mt-5 mb-3 small text-muted">
-    <%= link_to "利用規約", terms_path, class: "me-3 text-decoration-none" %>
-    <%= link_to "プライバシーポリシー", privacy_path, class: "me-3 text-decoration-none" %>
+    <%= link_to t("devise.registrations.new.terms"), terms_path, class: "me-3 text-decoration-none" %>
+    <%= link_to t("devise.registrations.new.privacy"), privacy_path, class: "me-3 text-decoration-none" %>
   </footer>
 </div>

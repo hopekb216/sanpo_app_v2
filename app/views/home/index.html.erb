@@ -1,8 +1,8 @@
-<p class="welcome-message">あなたの散歩コースを共有してみませんか。</p>
+<p class="welcome-message"><%= t("courses.index.welcome") %></p>
 
 <% if user_signed_in? %>
   <div class="actions mb-3">
-    <%= link_to "新規投稿", new_course_path, class: "btn btn-primary" %>
+    <%= link_to t("courses.index.new_course"), new_course_path, class: "btn btn-primary" %>
   </div>
 <% end %>
 
@@ -19,9 +19,14 @@
       <% end %>
 
       <h2><%= link_to course.title, course_path(course) %></h2>
-      <p>投稿日時：<%= course.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+
       <p>
-        投稿者：
+        <%= t("courses.index.posted_at") %>：
+        <%= l(course.created_at, format: :default) %>
+      </p>
+
+      <p>
+        <%= t("courses.index.author") %>：
         <%= link_to course.user.username, user_path(course.user) %>
       </p>
 
@@ -30,4 +35,3 @@
 </div>
 
 <%= paginate @courses %>
-

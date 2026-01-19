@@ -4,8 +4,11 @@ ja:
       title: "投稿一覧"
       new_post: "新規投稿"
       no_posts: "まだ投稿がありません"
+
     show:
       title: "投稿詳細"
+      author: "投稿者"
+      posted_at: "投稿日"
       edit: "編集"
       delete: "削除"
       back: "一覧へ戻る"
@@ -13,6 +16,7 @@ ja:
 
     new:
       title: "新規投稿"
+
     edit:
       title: "投稿の編集"
 
@@ -26,4 +30,3 @@ ja:
       created: "投稿を作成しました"
       updated: "投稿を更新しました"
       destroyed: "投稿を削除しました"
-      

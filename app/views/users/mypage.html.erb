@@ -1,16 +1,18 @@
 <div class="mypage-container">
 
   <!-- マイページタイトル -->
-  <h2 class="mypage-title"><%= @user.username %> さんのマイページ</h2>
+  <h2 class="mypage-title">
+    <%= t("users.mypage.title", username: @user.username) %>
+  </h2>
 
   <!-- アクションボタン（プロフィール編集・新規投稿） -->
   <div class="mypage-actions d-flex gap-3 mb-4">
-    <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-secondary" %>
-    <%= link_to "新規投稿", new_course_path, class: "btn btn-primary" %>
+    <%= link_to t("users.mypage.edit_profile"), edit_user_registration_path, class: "btn btn-secondary" %>
+    <%= link_to t("users.mypage.new_course"), new_course_path, class: "btn btn-primary" %>
   </div>
 
   <!-- 投稿一覧タイトル -->
-  <h3 class="mypage-subtitle">あなたの投稿一覧</h3>
+  <h3 class="mypage-subtitle"><%= t("users.mypage.your_posts") %></h3>
   <hr>
 
   <!-- 投稿カード一覧 -->
@@ -29,13 +31,14 @@
         </h2>
 
         <p class="course-date">
-          投稿日時：<%= course.created_at.strftime("%Y-%m-%d %H:%M") %>
+          <%= t("users.mypage.posted_at") %>：
+          <%= l(course.created_at, format: :default) %>
         </p>
 
         <div class="course-actions mt-2">
-          <%= link_to "編集", edit_course_path(course), class: "btn btn-secondary btn-sm" %>
-          <%= link_to "削除", course_path(course),
-                data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+          <%= link_to t("users.mypage.edit"), edit_course_path(course), class: "btn btn-secondary btn-sm" %>
+          <%= link_to t("users.mypage.delete"), course_path(course),
+                data: { turbo_method: :delete, turbo_confirm: t("users.mypage.confirm_delete") },
                 class: "btn btn-danger btn-sm" %>
         </div>
 
@@ -47,4 +50,3 @@
   <%= paginate @courses %>
 
 </div>
-

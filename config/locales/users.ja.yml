@@ -1,0 +1,16 @@
+ja:
+  users:
+    mypage:
+      title: "%{username} さんのマイページ"
+      edit_profile: "プロフィール編集"
+      new_course: "新規投稿"
+      your_posts: "あなたの投稿一覧"
+      posted_at: "投稿日時"
+      edit: "編集"
+      delete: "削除"
+      confirm_delete: "削除しますか？"
+
+    profile:
+      title: "%{username} さん"
+      posts_title: "投稿一覧"
+      posted_at: "投稿日時"
