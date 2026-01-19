@@ -8,6 +8,17 @@
   <h2 class="text-center mb-2"><%= t("devise.registrations.new.sign_up") %></h2>
   <p class="text-center text-muted mb-4"><%= t("devise.registrations.new.app_description") %></p>
 
+  <!-- ★ エラーメッセージ（追加） -->
+  <% if resource.errors.any? %>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        <% resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <!-- フォーム -->
   <%= form_for(resource,
                as: resource_name,

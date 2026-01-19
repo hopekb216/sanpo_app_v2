@@ -21,13 +21,14 @@ ja:
 
       new:
         sign_up: "新規登録"
+        sign_up_button: "登録する"
         username: "ユーザー名"
         email: "メールアドレス"
         password: "パスワード"
-        password_confirmation: "パスワード（確認）"
+        password_confirmation: "パスワード（確認用）"
         password_minimum: "(%{count}文字以上で入力してください)"
-        username_rule: "ユーザー名は 30 文字以内で入力してください"
-        password_rule: "パスワードは 6 文字以上で入力してください"
+        username_rule: "ユーザー名は30文字以内で入力してください"
+        password_rule: "パスワードは6文字以上で入力してください"
         already_have_account: "既にアカウントをお持ちの方はこちら"
         app_description: "おさんぽアプリ"
         terms: "利用規約"
