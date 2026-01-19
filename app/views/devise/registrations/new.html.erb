@@ -9,7 +9,11 @@
   <p class="text-center text-muted mb-4">おさんぽアプリ</p>
 
   <!-- フォーム -->
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource,
+               as: resource_name,
+               url: registration_path(resource_name),
+               data: { turbo: false }) do |f| %>
+
     <div class="mb-3">
       <%= f.label :username, t("devise.registrations.new.username") %>
       <%= f.text_field :username, autofocus: true, class: "form-control" %>
