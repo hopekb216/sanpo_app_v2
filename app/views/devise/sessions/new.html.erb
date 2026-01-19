@@ -8,6 +8,13 @@
   <h2 class="text-center mb-2"><%= t("devise.sessions.new.sign_in") %></h2>
   <p class="text-center text-muted mb-4"><%= t("devise.sessions.new.app_description") %></p>
 
+  <!-- ★ エラーメッセージ（追加） -->
+  <% if resource.errors.any? %>
+    <div class="alert alert-danger">
+      <%= resource.errors.full_messages.first %>
+    </div>
+  <% end %>
+
   <!-- フォーム -->
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="mb-3">
