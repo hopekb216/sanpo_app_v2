@@ -390,3 +390,22 @@ footer a {
 .header-right .btn {
     color: #fff !important;
 }
+
+.errors {
+    background-color: #ffecec;
+    border: 1px solid #f5c2c2;
+    color: #d8000c;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.errors ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+.errors li {
+    list-style-type: disc;
+}
